@@ -1,7 +1,9 @@
+import SummaryTab from "./components/SummaryTab";
+
 function App() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold text-blue-500">Hello, Tailwind CSS!</h1>
+    <div className="bg-blue-500 text-white p-5 text-xl font-bold">
+      <SummaryTab />
     </div>
   );
 }
