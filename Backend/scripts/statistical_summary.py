@@ -20,9 +20,8 @@ def statistical_summary(df,variables):
         json_file[j]["IQR"] = json_file[j]["75th Percentile"] - json_file[j]["25th Percentile"]
 
     return json_file
+   
     
-
-
 if __name__ == "__main__":
     
     df = pd.read_csv("train.csv")

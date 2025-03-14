@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from scripts.statistical_summary import statistical_summary
 import pandas as pd
 from fastapi.middleware.cors import CORSMiddleware
+from scripts.continuous_categorical import differentiate_categorical
 
 df = pd.read_csv("train.csv")
 variables = []
@@ -23,8 +24,15 @@ app.add_middleware(
 def read_root():
     return {"message": "Hello, FastAPI!"}
 
-@app.get("/statistical-summary")
-def read_statistical_summary():
+@app.get("/summary")
+def summary():
+    
+    summaries = {
+        "statistical_summary": statistical_summary(df,variables),
+        "continuous_categorical": differentiate_categorical(df)
+        
+    }
+    
     print(variables)
     summary = statistical_summary(df,variables)
     return summary

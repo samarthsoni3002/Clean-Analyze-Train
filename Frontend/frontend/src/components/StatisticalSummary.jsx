@@ -7,7 +7,7 @@ const StatisticalSummary = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/statistical-summary")
+    fetch("http://127.0.0.1:8000/summary")
       .then((response) => response.json())
       .then((data) => {
         console.log("Fetched Data:", data);
